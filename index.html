@@ -108,15 +108,67 @@
       </div>
     </section>
     <!-- Everything you need to run your books. -->
-    <section style="min-height: 1000px;">
-      <img src='img/background-call-to-action.jpg' alt="Background img" class="back-image"/>
-      <div>
-      <div>
-        Everything you need to run your books.
-      </div>
-      </div>
+    <section style="min-height: 1000px; position: relative;display: flex; justify-content: center; align-items: top;">
+      <img src='img/background-call-to-action.jpg' alt="Background img" class="back-image" style="position: absolute; top: 0; left: 0; z-index: -1; width: 100%; height: 100%;" />
+      
+      <div style="justify-content: center; align-items: center; display: flex; flex-direction: column; margin: 2rem;">
+          <div style="text-align: center; margin: 4rem;">
+              <h2 style="color: azure; font-size: 3rem; line-height: 3.5rem; font-family: __Lexend_866216;">Everything you need to run your books.</h2>
+              <p style="color: azure; letter-spacing: -.025rem; font-size: 1.125rem; line-height: 2rem; font-family: __Lexend_866216;">Well everything you need if you aren’t that picky about minor details like tax compliance.</p>
+          </div>
+  
+          <!-- This is the payroll stack -->
+          <div style="display: flex; justify-content: center; align-items: flex-start;">
+              <aside class="sidebar" style="flex: 1; max-width: 600px; display: flex; flex-direction: column; justify-content: start;">
+                  <nav>
+                      <ul style="list-style-type: none; padding: 0; margin: 0;">
+                          <li style="margin-bottom: 1rem;">
+                            <div data-section="payroll" onclick="showContent('payroll', this);" style="padding: 1rem; border-radius: 8px; width: 506px; margin-top: 3rem;">
 
+                              <!-- <div onclick="showContent('payroll', this);" style="padding: 1rem; border-radius: 8px;"> -->
+                                  <h3 style="color: white; font-size: 1.125rem; line-height: 2rem; font-family: __Lexend_866216;">Payroll</h3>
+                                  <p style="color: white; font-family: __Lexend_866216;">Keep track of everyone's salaries and whether or not they've been paid. Direct deposit not supported.</p>
+                              </div>
+                          </li>
+                          <li style="margin-bottom: 1rem;">
+                            <div data-section="expenses" onclick="showContent('expenses', this);" style="padding: 1rem; border-radius: 8px;width: 506px;">
+
+                              <!-- <div onclick="showContent('expenses', this);" style="padding: 1rem; border-radius: 8px;"> -->
+                                  <h3 style="color: white; font-size: 1.125rem; line-height: 2rem; font-family: __Lexend_866216;">Claim expenses</h3>
+                                  <p style="color: white; font-family: __Lexend_866216;">All of your receipts organized into one place, as long as you don't mind typing in the data by hand.</p>
+                              </div>
+                          </li>
+                          <li style="margin-bottom: 1rem;">
+                            <div data-section="vat" onclick="showContent('vat', this);" style="padding: 1rem; border-radius: 8px;width: 506px;">
+
+                              <!-- <div onclick="showContent('vat', this);" style="padding: 1rem; border-radius: 8px;"> -->
+                                  <h3 style="color: white; font-size: 1.125rem; line-height: 2rem; font-family: __Lexend_866216;">VAT handling</h3>
+                                  <p style="color: white; font-family: __Lexend_866216;">We only sell our software to companies who don't deal with VAT at all, so technically we do all the VAT stuff they need.</p>
+                              </div>
+                          </li>
+                          <li style="margin-bottom: 1rem;">
+                            <div data-section="reporting" onclick="showContent('reporting', this);" style="padding: 1rem; border-radius: 8px;width: 506px;margin-bottom: 3rem;">
+
+                              <!-- <div onclick="showContent('reporting', this);" style="padding: 1rem; border-radius: 8px;"> -->
+                                  <h3 style="color: white; font-size: 1.125rem; line-height: 2rem; font-family: __Lexend_866216;">Reporting</h3>
+                                  <p style="color: white; font-family: __Lexend_866216;">Easily export your data into an Excel spreadsheet where you can do whatever the hell you want with it.</p>
+                              </div>
+                          </li>
+                      </ul>
+                  </nav>
+              </aside>
+  
+              <!-- Additional Content -->
+              <div id="content-display" >
+                  <!-- The image that changes based on the selected option -->
+                  <img id="content-image" src="img/payroll.png" alt="Payroll Image" style="width: 1085px; height: 731px; border-radius: 18px;object-fit:cover;">
+              </div>
+          </div>
+      </div>
   </section>
+  
+  
+    
 
   </main>
 
