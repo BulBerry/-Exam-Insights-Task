@@ -31,32 +31,92 @@
 <!-- Body-->
 
 <body>
+  <header>
+    <div style="padding: 1.5rem;align-items: center;justify-content: space-between;">
+      <div style="justify-content: space-between; display: flex;">
+        <div style="column-gap: 3rem; align-items: center; display: flex;">
+            <img src="img/logo.svg" alt="Company Logo" width="109rem" height="40rem"/>
+          <!-- for the options like feature , testimonial, pricing  ,
+             space-between doesn't create space but put then in equidistant to eachother-->
+          <div style="display: flex; padding-left: 1rem;justify-content: space-between;">
+            <div style="margin-right: 1rem;">Features</div>
+            <div style="margin-right: 1rem;">Testimonial</div>
+            <div style="margin-right: 1rem;">Pricing</div>
+          </div>
+        </div>
+        <!-- for the button GetStarted and signin -->
+        <div style="column-gap: 2rem;display: flex; align-items: center;">
+          <div style="margin-left: 1rem;">Sign in</div>
+          <div class="btn btn-sm rounded-pill border "
+          style="background-color: #2563EB;color: white; padding: 0.5rem 1rem; ">Get Started</div>
+        </div>
+      </div>
+    </div>
+  </header>
   <main class="">
     <!-- Main content-->
 
     <section style="min-height: 1000px; background-color: rgb(255, 255, 255);">
       <div
-        style="display: flex; flex-direction: column; align-items: center; padding-top: 2rem; padding-bottom: 2rem; margin: auto; text-align: center;">
+        style="display: flex; flex-direction: column; align-items: center; padding-top: 2rem; padding-bottom: 2rem; margin: auto; text-align: center; padding-left: 2rem;padding-right: 2rem;">
         <!-- Header -->
-        <h1 style="max-width: 600px; font-size: 3rem; color: #0F172A;">Accounting <span style="color: #2563EB">made
-            simple</span> for small businesses.</h1>
+        <h1 style="max-width: 600px; font-size: 3rem; color: #0F172A;">Accounting 
+          <span style="position: relative;white-space: nowrap;">
+            <span style="color: #2563EB; position: relative;">made simple</span>
+          </span>
+           for small businesses.</h1>
         <p style="max-width: 530px; color: #334155;">Most bookkeeping software is accurate, but hard to use. We make the
           opposite trade-off, and hope you don’t get audited.</p>
-        <div class="row">
-          <div class="col-12 col-md-6">
+        <div class="row " >
+          <div class="col">
             <a href="#features" class="btn btn-sm rounded-pill text-light"
-              style="margin-top: 1rem; background-color: #0F172A;">Get 6 months free</a>
+              style="margin-top: 1rem; background-color: #0F172A;display: inline-flex; align-items: center; justify-content: center;
+              padding: 1rem; flex:1 1 auto;box-sizing: border-box;">
+              Get 6 months free
+            </a>
           </div>
-          <div class="col-12 col-md-6">
+          <div class="col">
             <a href="https://www.google.com" class="btn btn-sm rounded-pill border text-muted"
-              style="margin-top: 1rem; font-weight: 400; display: flex; align-items: center; justify-content: center;">
+              style="margin-top: 1rem; font-weight: 400; display: inline-flex; align-items: center; justify-content: center;
+              padding:1rem;flex:1 1 auto;box-sizing: border-box;">
               <i class="fi-play-filled pe-2 pt-1" style="color: #2563EB; font-size: 0.7rem;"></i>
               Watch video
             </a>
           </div>
         </div>
       </div>
+      <!-- Trusted by  -->
+      <div style="margin-top: 11rem; align-items: center;">
+        <p style="text-align: center; color: #0F172A;">Trusted by these six companies so far</p>
+        <!-- <ul style="justify-content: center; display: flex; align-items: center; list-style-type: none;"> -->
+          <ul class="image-list">
+          <li>
+            <ul class="inner-list">
+              <li style="display: inline; margin-right: 2rem;"><img src ='img/transistor.svg' alt="transitor"/></li>
+              <li style="display: inline; margin-right: 2rem;"><img src ='img/tuple.svg' alt="tuple"/></li>
+              <li style="display: inline; margin-right: 2rem;"><img src ='img/statickit.svg' alt="statickit"/></li>
+            </ul>
+          </li>
+          <li>
+            <ul class="inner-list">
+              <li style="display: inline; margin-right: 2rem;"><img src ='img/mirage.svg' alt="mirage"/></li>
+              <li style="display: inline; margin-right: 2rem;"><img src ='img/laravel.svg' alt="laravel"/></li>
+              <li style="display: inline; margin-right: 2rem;"><img src ='img/statamic.svg' alt="statamic"/></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </section>
+    <!-- Everything you need to run your books. -->
+    <section style="min-height: 1000px;">
+      <img src='img/background-call-to-action.jpg' alt="Background img" class="back-image"/>
+      <div>
+      <div>
+        Everything you need to run your books.
+      </div>
+      </div>
+
+  </section>
 
   </main>
 
