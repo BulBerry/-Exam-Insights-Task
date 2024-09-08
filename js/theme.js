@@ -883,19 +883,32 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+  const imageSlider = document.querySelector(".image-slider");
+
   function selectOption(selectedOption) {
-    // Remove 'activeImage' class from all images
-    document.querySelectorAll(".mainImage").forEach((img) => img.classList.remove("activeImage"));
+    // Grayscale all images first
+    document.querySelectorAll(".mainImage").forEach((img) => {
+      img.style.filter = 'grayscale(100%)'; // Apply grayscale to all images
+    });
 
-    // Build the ID of the corresponding image based on the selected option
-    const imageId = `${selectedOption}-image`;
+    // Calculate the index of the selected option (reporting: 0, inventory: 1, contacts: 2, etc.)
+    const optionIndex = {
+      'reporting': 0,
+      'inventory': 1,
+      'contacts': 2
+    }[selectedOption];
 
-    // Get the image by ID and add 'activeImage' class
-    const image = document.getElementById(imageId);
-    if (image) {
-      image.classList.add("activeImage");
+    if (typeof optionIndex !== 'undefined') {
+      const offset = -optionIndex * 844; // 844 is the width of each image
+      imageSlider.style.transform = `translateX(${offset}px)`; // Move the slider
+
+      // Get the specific image based on the selected option and remove grayscale
+      const selectedImage = document.querySelector(`#${selectedOption}-image`);
+      if (selectedImage) {
+        selectedImage.style.filter = 'grayscale(0%)'; // Remove grayscale on the selected image
+      }
     } else {
-      console.error(`Image with ID ${imageId} not found`);
+      console.error(`Option "${selectedOption}" not found`);
     }
   }
 
@@ -907,6 +920,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+
 
 
 })();

@@ -17611,10 +17611,10 @@ display: flex;
 justify-content: flex-start; /* Align content to the left */
 align-items: center;
 background-color: #f5f7f9;
-padding: 20px;
+padding: 2rem;
 border-radius: 15px;
 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-overflow-x: scroll; /* Allow horizontal scrolling */
+overflow-x: hidden; /* Allow horizontal scrolling */
 overflow-y: hidden; /* Prevent vertical overflow */
 width: 100%; /* Keep container width fixed */
 max-width: 1280px; /* Set a fixed max-width for the container */
@@ -17632,13 +17632,19 @@ width: max-content; /* Allow content to overflow horizontally */
 
 /* Ensure images fit in their containers properly */
 .image-wrapper {
+flex-shrink: 0;
 flex: none; /* Prevent the image from growing */
 height: 428px; /* Set the height to 428px */
 width: 844px; /* Set the width to 844px */
 background-color: #fff; /* Optional: white background for each image wrapper */
 padding: 10px;
 border-radius: 15px;
-overflow: hidden; /* Ensure the images don't overflow the container */
+overflow: hidden; 
+margin: 2rem;
+}
+.image-slider {
+  display: flex;
+  transition: transform 0.5s ease; /* Smooth slide transition */
 }
 
 /* Styling the image itself */
