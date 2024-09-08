@@ -17558,3 +17558,118 @@ _:-ms-lang(x), .jarallax .jarallax-img {
   object-fit: cover;
   z-index: -1;
 }
+
+
+/* .section2 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap; 
+  gap: 20px;
+}
+
+@media (max-width: 1020px) {
+  .section2 {
+      flex-direction: column;
+      align-items: center;  
+  }
+} */
+.section3option{
+padding: 1rem;
+border-radius: 8px;
+width: 506px;
+}
+@media (max-width: 1020px) {
+.section3option {
+  width: auto;
+  flex-direction: column;
+    /* align-items: center;  Aligns items centrally in the column layout */
+}
+}
+.section3option:hover {
+  background-color: rgba(0, 0, 255, 0.1); /* Highlight when hovering */
+}
+
+/* Animation for squish */
+@keyframes squish {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+
+
+/* General container to hold everything */
+.img_container {
+display: flex;
+justify-content: flex-start; /* Align content to the left */
+align-items: center;
+background-color: #f5f7f9;
+padding: 20px;
+border-radius: 15px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+overflow-x: scroll; /* Allow horizontal scrolling */
+overflow-y: hidden; /* Prevent vertical overflow */
+width: 100%; /* Keep container width fixed */
+max-width: 1280px; /* Set a fixed max-width for the container */
+white-space: nowrap; /* Prevent images from wrapping */
+}
+
+/* Flexbox gallery for images */
+.section3gallery {
+display: flex;
+gap: 20px; /* Space between images */
+justify-content: flex-start;
+align-items: center;
+width: max-content; /* Allow content to overflow horizontally */
+}
+
+/* Ensure images fit in their containers properly */
+.image-wrapper {
+flex: none; /* Prevent the image from growing */
+height: 428px; /* Set the height to 428px */
+width: 844px; /* Set the width to 844px */
+background-color: #fff; /* Optional: white background for each image wrapper */
+padding: 10px;
+border-radius: 15px;
+overflow: hidden; /* Ensure the images don't overflow the container */
+}
+
+/* Styling the image itself */
+.mainImage {
+width: 100%; /* Image takes full width */
+height: 100%; /* Image takes full height */
+object-fit: cover; /* Ensures image maintains aspect ratio and is cropped */
+border-radius: 10px;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Light shadow for images */
+filter: grayscale(100%);
+transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Hides the scrollbar for overflow content */
+.img_container::-webkit-scrollbar {
+display: none;
+}
+.option {
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+.selected {
+  background-color: blue; /* Adjust the blue color to your liking */
+}
+/* .mainImage {
+  width: 100%;
+  transition: filter 0.3s ease, transform 0.3s ease;
+  filter: grayscale(100%);
+} */
+.activeImage {
+  
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}

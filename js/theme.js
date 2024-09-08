@@ -818,114 +818,95 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
     }
   }();
   
-//   document.addEventListener('DOMContentLoaded', function() {
-//     // Automatically select the Payroll tab when the page loads
-//     var payrollTab = document.querySelector('div[onclick="showContent(\'payroll\', this);"]');
-//     if (payrollTab) {
-//         showContent('payroll', payrollTab);
-//     }
 
 
-// function showContent(section, element) {
-//   console.log('showContent called with section:', section);
-  
-//   // Remove active background color from all list items
-//   document.querySelectorAll('.sidebar li div').forEach(function(div) {
-//       div.style.backgroundColor = ''; // Reset background color
-//   });
 
-//   // Set the background color of the selected item
-//   element.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
-//   console.log('Background color set for element:', element);
 
-//   // Change the image based on the selected section
-//   var contentImage = document.getElementById('content-image');
-//   console.log('Content image element:', contentImage);
-//   if (contentImage) {
-//       switch(section) {
-//           case 'payroll':
-//               contentImage.src = 'img/TaxPal Payroll.png';
-//               contentImage.alt = 'Payroll Image';
-//               break;
-//           case 'expenses':
-//               contentImage.src = 'img/expenses-image.jpg';
-//               contentImage.alt = 'Expenses Image';
-//               break;
-//           case 'vat':
-//               contentImage.src = 'img/vat-handling.png';
-//               contentImage.alt = 'VAT Image';
-//               break;
-//           case 'reporting':
-//               contentImage.src = 'img/reporting-lg.png';
-//               contentImage.alt = 'Reporting Image';
-//               break;
-//           default:
-//               contentImage.src = 'img/TaxPal Payroll.png';
-//               contentImage.alt = 'Default Image';
-//       }
-//       console.log('Image source set to:', contentImage.src);
-//   }
-// }
-
-// Wrapping everything inside the DOMContentLoaded to ensure the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', function() {
+ // Wrapping everything inside the DOMContentLoaded to ensure the DOM is fully loaded
+ document.addEventListener("DOMContentLoaded", function () {
   // Define the showContent function
   function showContent(section, element) {
-      console.log('showContent called with section:', section);
+    console.log("showContent called with section:", section);
 
-      // Remove active background color from all list items
-      document.querySelectorAll('.sidebar li div').forEach(function(div) {
-          div.style.backgroundColor = ''; // Reset background color
-      });
+    // Remove active background color from all list items
+    document.querySelectorAll(".sidebar li div").forEach(function (div) {
+      div.style.backgroundColor = ""; // Reset background color
+    });
 
-      // Set the background color of the selected item
-      element.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
-      console.log('Background color set for element:', element);
+    // Set the background color of the selected item
+    element.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
+    console.log("Background color set for element:", element);
 
-      // Change the image based on the selected section
-      var contentImage = document.getElementById('content-image');
-      console.log('Content image element:', contentImage);
-      if (contentImage) {
-          switch(section) {
-              case 'payroll':
-                  contentImage.src = 'img/TaxPal Payroll.png';
-                  contentImage.alt = 'Payroll Image';
-                  break;
-              case 'expenses':
-                  contentImage.src = 'img/expenses.png';
-                  contentImage.alt = 'Expenses Image';
-                  break;
-              case 'vat':
-                  contentImage.src = 'img/vat-handling.png';
-                  contentImage.alt = 'VAT Image';
-                  break;
-              case 'reporting':
-                  contentImage.src = 'img/reporting-lg.png';
-                  contentImage.alt = 'Reporting Image';
-                  break;
-              default:
-                  contentImage.src = 'img/TaxPal Payroll.png';
-                  contentImage.alt = 'Default Image';
-          }
-          console.log('Image source set to:', contentImage.src);
+    // Change the image based on the selected section
+    var contentImage = document.getElementById("content-image");
+    console.log("Content image element:", contentImage);
+    if (contentImage) {
+      switch (section) {
+        case "payroll":
+          contentImage.src = "img/TaxPal Payroll.png";
+          contentImage.alt = "Payroll Image";
+          break;
+        case "expenses":
+          contentImage.src = "img/expenses.png";
+          contentImage.alt = "Expenses Image";
+          break;
+        case "vat":
+          contentImage.src = "img/vat-handling.png";
+          contentImage.alt = "VAT Image";
+          break;
+        case "reporting":
+          contentImage.src = "img/reporting-lg.png";
+          contentImage.alt = "Reporting Image";
+          break;
+        default:
+          contentImage.src = "img/TaxPal Payroll.png";
+          contentImage.alt = "Default Image";
       }
+      console.log("Image source set to:", contentImage.src);
+    }
   }
 
   // Bind showContent to all clickable divs in the sidebar
-  document.querySelectorAll('.sidebar li div').forEach(function(div) {
-      div.onclick = function() {
-          showContent(div.getAttribute('data-section'), div);
-      };
+  document.querySelectorAll(".sidebar li div").forEach(function (div) {
+    div.onclick = function () {
+      showContent(div.getAttribute("data-section"), div);
+    };
   });
 
   // Automatically select the Payroll tab when the page loads
-  var payrollTab = document.querySelector('div[onclick="showContent(\'payroll\', this);"]');
+  var payrollTab = document.querySelector(
+    "div[onclick=\"showContent('payroll', this);\"]"
+  );
   if (payrollTab) {
-      showContent('payroll', payrollTab);
+    showContent("payroll", payrollTab);
   }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  function selectOption(selectedOption) {
+    // Remove 'activeImage' class from all images
+    document.querySelectorAll(".mainImage").forEach((img) => img.classList.remove("activeImage"));
 
+    // Build the ID of the corresponding image based on the selected option
+    const imageId = `${selectedOption}-image`;
+
+    // Get the image by ID and add 'activeImage' class
+    const image = document.getElementById(imageId);
+    if (image) {
+      image.classList.add("activeImage");
+    } else {
+      console.error(`Image with ID ${imageId} not found`);
+    }
+  }
+
+  // Attach event listeners to each option
+  document.querySelectorAll(".section3option").forEach((option) => {
+    option.addEventListener("click", function () {
+      const selectedOption = option.getAttribute("data-option"); // Get the value of 'data-option'
+      selectOption(selectedOption); // Call selectOption with the selected option
+    });
+  });
+});
 
 
 })();

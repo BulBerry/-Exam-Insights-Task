@@ -92,16 +92,16 @@
           <ul class="image-list">
           <li>
             <ul class="inner-list">
-              <li style="display: inline; margin-right: 2rem;"><img src ='img/transistor.svg' alt="transitor"/></li>
-              <li style="display: inline; margin-right: 2rem;"><img src ='img/tuple.svg' alt="tuple"/></li>
-              <li style="display: inline; margin-right: 2rem;"><img src ='img/statickit.svg' alt="statickit"/></li>
+              <li style="display: inline; margin-right: 2rem;"><img src ='img/transistor.svg' alt="transitor" loading="lazy"/></li>
+              <li style="display: inline; margin-right: 2rem;"><img src ='img/tuple.svg' alt="tuple" loading="lazy"/></li>
+              <li style="display: inline; margin-right: 2rem;"><img src ='img/statickit.svg' alt="statickit" loading="lazy"/></li>
             </ul>
           </li>
           <li>
             <ul class="inner-list">
-              <li style="display: inline; margin-right: 2rem;"><img src ='img/mirage.svg' alt="mirage"/></li>
-              <li style="display: inline; margin-right: 2rem;"><img src ='img/laravel.svg' alt="laravel"/></li>
-              <li style="display: inline; margin-right: 2rem;"><img src ='img/statamic.svg' alt="statamic"/></li>
+              <li style="display: inline; margin-right: 2rem;"><img src ='img/mirage.svg' alt="mirage" loading="lazy"/></li>
+              <li style="display: inline; margin-right: 2rem;"><img src ='img/laravel.svg' alt="laravel" loading="lazy"/></li>
+              <li style="display: inline; margin-right: 2rem;"><img src ='img/statamic.svg' alt="statamic" loading="lazy"/></li>
             </ul>
           </li>
         </ul>
@@ -161,11 +161,79 @@
               <!-- Additional Content -->
               <div id="content-display" >
                   <!-- The image that changes based on the selected option -->
-                  <img id="content-image" src="img/payroll.png" alt="Payroll Image" style="width: 1085px; height: 731px; border-radius: 18px;object-fit:cover;">
+                  <img id="content-image" src="img/payroll.png" alt="Payroll Image" style="width: 1085px; height: 731px; border-radius: 18px;object-fit:cover; " loading="lazy">
               </div>
           </div>
       </div>
   </section>
+    <!-- This is the third section -->
+    <section style="min-height: 1000px; background-color: rgb(255, 255, 255); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem;">
+      <div style="width: 100%; max-width: 640px; text-align: center; margin: auto; padding: 0 2rem;">
+        <h2 style="margin-top: 5rem; font-size: 2.5rem; line-height: 3.5rem; font-family: __Lexend_866216;">
+          Simplify everyday business tasks.
+        </h2>
+        <p style="letter-spacing: -.025rem; font-size: 1.125rem; line-height: 2rem; margin-top: 1rem;">
+          Because you’d probably be a little confused if we suggested you complicate your everyday business tasks instead.
+        </p>
+      </div>
+      <!-- options and images -->
+      <div style="display: flex; flex-direction: column; align-items: center; padding: 2rem; margin-top: 5rem; margin-bottom: 8rem;">
+        <div style="display: flex; justify-content: center; flex-wrap: nowrap; width: 100%; max-width: 1200px;">
+          <!-- Individual option -->
+          <div class="section3option" data-option="reporting"  style="text-align: left; margin: 0 2rem; min-width: 372px; padding-left: 4rem;">
+            <img src="img/github.svg" style="width: 2.25rem;" loading="lazy"/>
+            <h3 style="font-weight: 500; font-size: .875rem; line-height: 1.5rem; margin-top: 1.5rem;">
+              Reporting
+            </h3>
+            <p style="font-size: 1.25rem; line-height: 2rem; margin-top: .5rem; color: #0F172A;">
+              Stay on top of things with always up-to-date reporting features.
+            </p>
+            <p style="color: rgb(71, 85, 105); font-size: .875rem; line-height: 1.5rem; margin-top: 1rem;">
+              We talked about reporting in the section above but we needed three items here, so mentioning it one more time for posterity.
+            </p>
+          </div>
+          <!-- Repeat for each option -->
+          <div class="section3option"  data-option="inventory" style="text-align: left; margin: 0 2rem; min-width: 372px;">
+            <img src="img/github.svg" style="width: 2.25rem;" loading="lazy"/>
+            <h3 style="font-weight: 500; font-size: .875rem; line-height: 1.5rem; margin-top: 1.5rem;">
+              Inventory
+            </h3>
+            <p style="font-size: 1.25rem; line-height: 2rem; margin-top: .5rem; color: #0F172A;">
+              Never lose track of what’s in stock with accurate inventory tracking.
+            </p>
+            <p style="color: rgb(71, 85, 105); font-size: .875rem; line-height: 1.5rem; margin-top: 1rem;">
+              We don’t offer this as part of our software but that statement is inarguably true. Accurate inventory tracking would help you for sure.
+            </p>
+          </div>
+          <div class="section3option"  data-option="contacts" style="text-align: left; margin: 0 2rem; min-width: 372px; padding-right: 2rem;">
+            <img src="img/github.svg" style="width: 2.25rem;" loading="lazy"/>
+            <h3 style="font-weight: 500; font-size: .875rem; line-height: 1.5rem; margin-top: 1.5rem;">
+              Contacts
+            </h3>
+            <p style="font-size: 1.25rem; line-height: 2rem; margin-top: .5rem; color: #0F172A;">
+              Organize all of your contacts, service providers, and invoices in one place.
+            </p>
+            <p style="color: rgb(71, 85, 105); font-size: .875rem; line-height: 1.5rem; margin-top: 1rem;">
+              This also isn’t actually a feature, it’s just some friendly advice. We definitely recommend that you do this, you’ll feel really organized and professional.
+            </p>
+          </div>
+        </div>
+        <!-- images -->
+        <div class="img_container" style="padding: 2rem">
+          <div class="section3gallery" style="padding-right:2rem; padding-left: 2rem;">
+            <div class="image-wrapper">
+              <img src="img/reporting.png" id="reporting-image" class="mainImage" alt="reporting image" id="reporting-image" loading="lazy">
+            </div>
+            <div class="image-wrapper">
+              <img src="img/inventory.png" id="inventory-image" class="mainImage" alt="inventory image" id="inventory-image" loading="lazy">
+            </div>
+            <div class="image-wrapper">
+              <img src="img/contacs.png" id="contacts-image" class="mainImage" alt="contacts image" id="contacts-image" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   
   
     
