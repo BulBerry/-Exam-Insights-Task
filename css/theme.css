@@ -128,6 +128,9 @@ body {
   background-color: var(--fi-body-bg);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 hr {
@@ -17551,12 +17554,12 @@ _:-ms-lang(x), .jarallax .jarallax-img {
 }
 .back-image{
   position: absolute;
-  /* top: 0; */
+  top: 0;
   left: 0;
+  z-index: -1;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
 }
 
 
@@ -17574,34 +17577,42 @@ _:-ms-lang(x), .jarallax .jarallax-img {
       align-items: center;  
   }
 } */
-.section3option{
-padding: 1rem;
-border-radius: 8px;
-width: 506px;
-}
-@media (max-width: 1020px) {
 .section3option {
-  width: auto;
-  flex-direction: column;
-    /* align-items: center;  Aligns items centrally in the column layout */
-}
-}
-.section3option:hover {
-  background-color: rgba(0, 0, 255, 0.1); /* Highlight when hovering */
+  padding: 1rem;
+  border-radius: 8px;
+  width: 506px;
 }
 
-/* Animation for squish */
-@keyframes squish {
-  0% {
-    transform: scale(1, 1);
-  }
-  50% {
-    transform: scale(1.1, 0.9);
-  }
-  100% {
-    transform: scale(1, 1);
+@media (max-width: 1020px) {
+  .section3option {
+    width: auto;
+    flex-direction: column;
   }
 }
+
+/* Normal button styling */
+.option-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Change color when button has active class */
+.option-button.active {
+  background-color: blue; /* Blue background */
+}
+
+/* Change image filter to blue when button is clicked */
+.option-button.active img {
+  filter: brightness(0) saturate(100%) invert(30%) sepia(60%) saturate(400%) hue-rotate(200deg); /* Adjust to your preferred blue */
+}
+
+/* Change text color to blue */
+.section3option.active h3, .section3option.active p {
+  color: blue; /* Blue text color */
+}
+
 
 
 
@@ -17700,28 +17711,85 @@ display: none;
   .nav-actions {
     display: none; /* Hide desktop navigation menu on small screens */
   }
+  .sign-in {
+    display: none; /* Hide the desktop navigation menu and "Sign in" link on small screens */
+  }
 
   .hamburger-menu {
     display: block; /* Show the hamburger menu on small screens */
+    font-size: 2rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001; /* Ensure it's on top */
+    transition: transform 0.3s ease; /* Smooth transition for rotating */
+  }
+
+  .hamburger-menu.active {
+    transform: rotate(90deg); 
+    /* Rotate to make it look like an "X" */
+  }
+  .sign-in {
+    font-size: 1rem;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
   }
 
   .mobile-menu {
-    display: none; /* Keep mobile menu hidden by default */
+    display: none; /* Initially hide the mobile menu */
     flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 70px; /* Adjust the position as per your layout */
+    right: 0;
+    left: 0;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Add subtle shadow for better visibility */
+    text-align: left;
     transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+    z-index: 1000; /* Ensure it stays above other elements */
   }
-}
 
-/* Mobile menu transitions */
-.mobile-menu.show {
-  display: flex; /* Show mobile menu when .show class is added */
-  opacity: 1;
-  transform: translateY(0); /* Slide in the mobile menu */
-}
+  .mobile-menu.show {
+    display: flex; /* Show mobile menu when .show class is added */
+    opacity: 1;
+    transform: translateY(0); /* Slide in the mobile menu */
+  }
 
-.mobile-menu {
-  opacity: 0;
-  transform: translateY(-20px); /* Initially slide up a bit */
-  transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
-}
+  /* Style for the menu items */
+  .mobile-menu div {
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
 
+  .mobile-menu div:hover {
+    color: #2563EB; /* Hover effect */
+  }
+
+  /* Close button styling (optional, as hamburger will turn into 'X') */
+  .close-menu {
+    display: none; /* Remove the close menu as the hamburger turns into an X */
+  }
+
+  .content-display {
+    flex: 1;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    max-width: 50%; /* Adjust this value as needed */
+    border-radius: 18px;
+}
+#content-image {
+    max-width: 1085px;
+    max-height: 73-px;
+    width: auto;
+    height: auto;
+    border-radius: 18px;
+    object-fit: contain;
+}
+}

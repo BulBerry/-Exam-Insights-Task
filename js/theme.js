@@ -884,11 +884,15 @@ function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input ==
 
 document.addEventListener("DOMContentLoaded", function () {
   const imageSlider = document.querySelector(".image-slider");
+  const buttons = document.querySelectorAll('.option-button');
 
   function selectOption(selectedOption) {
-    // Grayscale all images first
+    // Reset all images and text to grayscale and default colors
     document.querySelectorAll(".mainImage").forEach((img) => {
       img.style.filter = 'grayscale(100%)'; // Apply grayscale to all images
+    });
+    document.querySelectorAll(".section3option").forEach((option) => {
+      option.classList.remove('active'); // Remove 'active' class from all options
     });
 
     // Calculate the index of the selected option (reporting: 0, inventory: 1, contacts: 2, etc.)
@@ -907,33 +911,60 @@ document.addEventListener("DOMContentLoaded", function () {
       if (selectedImage) {
         selectedImage.style.filter = 'grayscale(0%)'; // Remove grayscale on the selected image
       }
+
+      // Add 'active' class to the selected option (to apply blue color)
+      const selectedOptionElement = document.querySelector(`[data-option="${selectedOption}"]`);
+      if (selectedOptionElement) {
+        selectedOptionElement.classList.add('active'); // Add 'active' class to change text and image color
+      }
     } else {
       console.error(`Option "${selectedOption}" not found`);
     }
   }
 
-  // Attach event listeners to each option
+  // Call the function when an option is clicked (reporting, inventory, contacts)
   document.querySelectorAll(".section3option").forEach((option) => {
-    option.addEventListener("click", function () {
-      const selectedOption = option.getAttribute("data-option"); // Get the value of 'data-option'
-      selectOption(selectedOption); // Call selectOption with the selected option
+    option.addEventListener('click', function () {
+      const selectedOption = this.getAttribute('data-option');
+      selectOption(selectedOption);
+    });
+  });
+
+  buttons.forEach(button => {
+    button.addEventListener('click', function () {
+      // Remove active class from all buttons and section options
+      buttons.forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.section3option').forEach(option => option.classList.remove('active'));
+
+      // Add active class to the clicked button and its parent section
+      this.classList.add('active');
+      this.closest('.section3option').classList.add('active');
     });
   });
 });
 
 
-//this is the navbar 
+  
 
+
+
+//this is the navbar 
 document.addEventListener('DOMContentLoaded', function() {
   const hamburgerMenu = document.querySelector('.hamburger-menu');
   const mobileMenu = document.querySelector('.mobile-menu');
 
-  // Add click event listener to toggle the mobile menu
+  // Add click event listener to toggle the mobile menu and transform the hamburger icon to 'X'
   hamburgerMenu.addEventListener('click', function() {
-    mobileMenu.classList.toggle('show'); // Toggle the "show" class to display the menu
-    
+    mobileMenu.classList.toggle('show'); // Toggle the mobile menu visibility
+    hamburgerMenu.classList.toggle('active'); // Add the active class to rotate hamburger into 'X'
+    if (hamburgerMenu.classList.contains('active')) {
+      hamburgerMenu.textContent = '×'; // Change hamburger icon to 'X'
+    } else {
+      hamburgerMenu.textContent = '☰'; // Change back to hamburger icon
+    }
   });
 });
+
 
 
 

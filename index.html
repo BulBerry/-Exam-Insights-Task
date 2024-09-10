@@ -36,7 +36,7 @@
       <div style="column-gap: 3rem; align-items: center; display: flex;">
         <!-- Company Logo -->
         <img src="img/logo.svg" alt="Company Logo" width="109rem" height="40rem" />
-    
+      
         <!-- Desktop Navigation Menu (Visible on larger screens) -->
         <div class="nav-options">
           <div style="margin-right: 1rem;">Features</div>
@@ -44,39 +44,45 @@
           <div style="margin-right: 1rem;">Pricing</div>
         </div>
       </div>
-    
-      <!-- Desktop Buttons (Visible on larger screens) -->
-      <div class="nav-actions">
-        <div style="margin: 1rem;">Sign in</div>
-        <div class="btn btn-sm rounded-pill border" style="background-color: #2563EB; color: white; padding: 0.5rem 1rem;">
+      
+      <!-- Container for "Sign In", "Get Started" Button and Hamburger Menu -->
+      <div style="display: flex; align-items: center; column-gap: 1rem;">
+        <!-- Sign In link -->
+        <div class="sign-in" style="font-size: 1rem; color: #333; cursor: pointer; margin-right: 1rem;">
+          Sign in
+        </div>
+  
+        <!-- "Get Started" Button (Visible on all screens) -->
+        <div class="btn btn-sm rounded-pill border get-started-btn" style="background-color: #2563EB; color: white; padding: 0.5rem 1rem; max-width: 110px;">
           Get Started
         </div>
-      </div>
-    
-      <!-- Hamburger Menu Icon (Visible on smaller screens) -->
-      <div class="hamburger-menu" style="font-size: 2rem; cursor: pointer;">
-        ☰
+      
+        <!-- Hamburger Menu Icon (Visible on smaller screens) -->
+        <div class="hamburger-menu" id="hamburger-menu" style="font-size: 2rem; cursor: pointer;">
+          ☰
+        </div>
       </div>
     </div>
     
     <!-- Mobile Menu (Hidden by default, visible on smaller screens) -->
-    <div class="mobile-menu" style="display: none; flex-direction: column; padding-top: 1rem;">
-      <div style="margin-bottom: 1rem;">Features</div>
-      <div style="margin-bottom: 1rem;">Testimonial</div>
-      <div style="margin-bottom: 1rem;">Pricing</div>
-      <div style="margin-bottom: 1rem;">Sign in</div>
-      <div class="btn btn-sm rounded-pill border" style="background-color: #2563EB; color: white; padding: 0.5rem 1rem;">
-        Get Started
-      </div>
+    <div class="mobile-menu">
+      <div>Features</div>
+      <div>Testimonial</div>
+      <div>Pricing</div>
+      <div>Sign in</div>
     </div>
   </header>
+  
+  
+  
+  
   
   <main class="">
     <!-- Main content-->
 
-    <section style="min-height: 1000px; background-color: rgb(255, 255, 255);">
+    <section style="min-height: 800px; background-color: rgb(255, 255, 255); justify-content: center;">
       <div
-        style="display: flex; flex-direction: column; align-items: center; padding-top: 2rem; padding-bottom: 2rem; margin: auto; text-align: center; padding-left: 2rem;padding-right: 2rem;">
+        style="display: flex; flex-direction: column; align-items: center; padding-top: 2rem; padding-bottom: 2rem; margin: auto; text-align: center; padding-left: 2rem;padding-right: 2rem;   ">
         <!-- Header -->
         <h1 style="max-width: 600px; font-size: 3rem; color: #0F172A;">Accounting 
           <span style="position: relative;white-space: nowrap;">
@@ -126,64 +132,51 @@
       </div>
     </section>
     <!-- Everything you need to run your books. -->
-    <section style="min-height: 1000px; position: relative;display: flex; justify-content: center; align-items: top;">
-      <img src='img/background-call-to-action.jpg' alt="Background img" class="back-image" style="position: absolute; top: 0; left: 0; z-index: -1; width: 100%; height: 100%;" />
-      
-      <div style="justify-content: center; align-items: center; display: flex; flex-direction: column; margin: 2rem;">
-          <div style="text-align: center; margin: 4rem;">
-              <h2 style="color: azure; font-size: 3rem; line-height: 3.5rem; font-family: __Lexend_866216;">Everything you need to run your books.</h2>
-              <p style="color: azure; letter-spacing: -.025rem; font-size: 1.125rem; line-height: 2rem; font-family: __Lexend_866216;">Well everything you need if you aren’t that picky about minor details like tax compliance.</p>
-          </div>
-  
-          <!-- This is the payroll stack -->
-          <div style="display: flex; justify-content: center; align-items: flex-start;">
-              <aside class="sidebar" style="flex: 1; max-width: 600px; display: flex; flex-direction: column; justify-content: start;">
-                  <nav>
-                      <ul style="list-style-type: none; padding: 0; margin: 0;">
-                          <li style="margin-bottom: 1rem;">
-                            <div data-section="payroll" onclick="showContent('payroll', this);" style="padding: 1rem; border-radius: 8px; width: 506px; margin-top: 3rem;">
-
-                              <!-- <div onclick="showContent('payroll', this);" style="padding: 1rem; border-radius: 8px;"> -->
-                                  <h3 style="color: white; font-size: 1.125rem; line-height: 2rem; font-family: __Lexend_866216;">Payroll</h3>
-                                  <p style="color: white; font-family: __Lexend_866216;">Keep track of everyone's salaries and whether or not they've been paid. Direct deposit not supported.</p>
-                              </div>
-                          </li>
-                          <li style="margin-bottom: 1rem;">
-                            <div data-section="expenses" onclick="showContent('expenses', this);" style="padding: 1rem; border-radius: 8px;width: 506px;">
-
-                              <!-- <div onclick="showContent('expenses', this);" style="padding: 1rem; border-radius: 8px;"> -->
-                                  <h3 style="color: white; font-size: 1.125rem; line-height: 2rem; font-family: __Lexend_866216;">Claim expenses</h3>
-                                  <p style="color: white; font-family: __Lexend_866216;">All of your receipts organized into one place, as long as you don't mind typing in the data by hand.</p>
-                              </div>
-                          </li>
-                          <li style="margin-bottom: 1rem;">
-                            <div data-section="vat" onclick="showContent('vat', this);" style="padding: 1rem; border-radius: 8px;width: 506px;">
-
-                              <!-- <div onclick="showContent('vat', this);" style="padding: 1rem; border-radius: 8px;"> -->
-                                  <h3 style="color: white; font-size: 1.125rem; line-height: 2rem; font-family: __Lexend_866216;">VAT handling</h3>
-                                  <p style="color: white; font-family: __Lexend_866216;">We only sell our software to companies who don't deal with VAT at all, so technically we do all the VAT stuff they need.</p>
-                              </div>
-                          </li>
-                          <li style="margin-bottom: 1rem;">
-                            <div data-section="reporting" onclick="showContent('reporting', this);" style="padding: 1rem; border-radius: 8px;width: 506px;margin-bottom: 3rem;">
-
-                              <!-- <div onclick="showContent('reporting', this);" style="padding: 1rem; border-radius: 8px;"> -->
-                                  <h3 style="color: white; font-size: 1.125rem; line-height: 2rem; font-family: __Lexend_866216;">Reporting</h3>
-                                  <p style="color: white; font-family: __Lexend_866216;">Easily export your data into an Excel spreadsheet where you can do whatever the hell you want with it.</p>
-                              </div>
-                          </li>
-                      </ul>
-                  </nav>
-              </aside>
-  
-              <!-- Additional Content -->
-              <div id="content-display" >
-                  <!-- The image that changes based on the selected option -->
-                  <img id="content-image" src="img/payroll.png" alt="Payroll Image" style="width: 1085px; height: 731px; border-radius: 18px;object-fit:cover; " loading="lazy">
-              </div>
-          </div>
+    <section style="min-height: 100vh; margin: 0; padding: 2rem; position: relative; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; overflow: hidden; width: 100%; background: url('img/background-call-to-action.jpg'); box-sizing: border-box;">
+      <div style="text-align: center; margin: 2rem 0;">
+        <h2 style="color: white; font-size: 2.5rem; line-height: 3rem; font-family: '__Lexend_866216', sans-serif; max-width: 800px; margin: 0 auto;">Everything you need to run your books.</h2>
+        <p style="color: white; letter-spacing: -.025rem; font-size: 1.125rem; line-height: 2rem; font-family: '__Lexend_866216', sans-serif; max-width: 800px; margin: 1rem auto 0;">Well everything you need if you aren't that picky about minor details like tax compliance.</p>
       </div>
-  </section>
+      <div style="display: flex; justify-content: center; align-items: flex-start; gap: 2rem; width: 100%; max-width: 1200px;">
+        <aside class="sidebar" style="flex: 1; max-width: 500px; display: flex; flex-direction: column; justify-content: start; margin-left: 2rem;">
+          <nav>
+            <ul style="list-style-type: none; padding: 0; margin: 0;">
+              <li style="margin-bottom: 1rem;">
+                <div data-section="payroll" onclick="showContent('payroll', this);" style="padding: 1rem; border-radius: 8px; width: 100%; background: rgba(255, 255, 255, 0.1); cursor: pointer;">
+                  <h3 style="color: white; font-size: 1.125rem; line-height: 1.5rem; font-family: '__Lexend_866216', sans-serif; margin-top: 0;">Payroll</h3>
+                  <p style="color: white; font-family: '__Lexend_866216', sans-serif; margin-bottom: 0;">Keep track of everyone's salaries and whether or not they've been paid. Direct deposit not supported.</p>
+                </div>
+              </li>
+              <li style="margin-bottom: 1rem;">
+                <div data-section="expenses" onclick="showContent('expenses', this);" style="padding: 1rem; border-radius: 8px; width: 100%; background: rgba(255, 255, 255, 0.1); cursor: pointer;">
+                  <h3 style="color: white; font-size: 1.125rem; line-height: 1.5rem; font-family: '__Lexend_866216', sans-serif; margin-top: 0;">Claim expenses</h3>
+                  <p style="color: white; font-family: '__Lexend_866216', sans-serif; margin-bottom: 0;">All of your receipts organized into one place, as long as you don't mind typing in the data by hand.</p>
+                </div>
+              </li>
+              <li style="margin-bottom: 1rem;">
+                <div data-section="vat" onclick="showContent('vat', this);" style="padding: 1rem; border-radius: 8px; width: 100%; background: rgba(255, 255, 255, 0.1); cursor: pointer;">
+                  <h3 style="color: white; font-size: 1.125rem; line-height: 1.5rem; font-family: '__Lexend_866216', sans-serif; margin-top: 0;">VAT handling</h3>
+                  <p style="color: white; font-family: '__Lexend_866216', sans-serif; margin-bottom: 0;">We only sell our software to companies who don't deal with VAT at all, so technically we do all the VAT stuff they need.</p>
+                </div>
+              </li>
+              <li>
+                <div data-section="reporting" onclick="showContent('reporting', this);" style="padding: 1rem; border-radius: 8px; width: 100%; background: rgba(255, 255, 255, 0.1); cursor: pointer;">
+                  <h3 style="color: white; font-size: 1.125rem; line-height: 1.5rem; font-family: '__Lexend_866216', sans-serif; margin-top: 0;">Reporting</h3>
+                  <p style="color: white; font-family: '__Lexend_866216', sans-serif; margin-bottom: 0;">Easily export your data into an Excel spreadsheet where you can do whatever the hell you want with it.</p>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+    
+        <!-- Image Content Section -->
+        <div class="content-display" style="flex: 2; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);margin-top: 2rem;">
+          <img id="content-image" src="img/payroll.png" alt="TaxPal Feature" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+      </div>
+    </section>
+    
+  
     <!-- This is the third section -->
     <section style="min-height: 1000px; background-color: rgb(255, 255, 255); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem;">
       <div style="width: 100%; max-width: 640px; text-align: center; margin: auto; padding: 0 2rem;">
@@ -199,7 +192,9 @@
         <div style="display: flex; justify-content: center; flex-wrap: nowrap; width: 100%; max-width: 1200px;">
           <!-- Individual option -->
           <div class="section3option" data-option="reporting"  style="text-align: left; margin: 0 2rem; min-width: 372px; padding-left: 4rem;">
-            <img src="img/github.svg" style="width: 2.25rem;" loading="lazy"/>
+            <button class="option-button" style="border: none; background: none; cursor: pointer; padding: 0;">
+              <img src="img/github.svg" style="width: 2.25rem;" loading="lazy" alt="Inventory Icon"/>
+            </button>
             <h3 style="font-weight: 500; font-size: .875rem; line-height: 1.5rem; margin-top: 1.5rem;">
               Reporting
             </h3>
@@ -211,8 +206,10 @@
             </p>
           </div>
           <!-- Repeat for each option -->
-          <div class="section3option"  data-option="inventory" style="text-align: left; margin: 0 2rem; min-width: 372px;">
-            <img src="img/github.svg" style="width: 2.25rem;" loading="lazy"/>
+          <div class="section3option" data-option="inventory" style="text-align: left; margin: 0 2rem; min-width: 372px;">
+            <button class="option-button" style="border: none; background: none; cursor: pointer; padding: 0;">
+              <img src="img/github.svg" style="width: 2.25rem;" loading="lazy" alt="Inventory Icon"/>
+            </button>
             <h3 style="font-weight: 500; font-size: .875rem; line-height: 1.5rem; margin-top: 1.5rem;">
               Inventory
             </h3>
@@ -223,8 +220,11 @@
               We don’t offer this as part of our software but that statement is inarguably true. Accurate inventory tracking would help you for sure.
             </p>
           </div>
+          
           <div class="section3option"  data-option="contacts" style="text-align: left; margin: 0 2rem; min-width: 372px; padding-right: 2rem;">
-            <img src="img/github.svg" style="width: 2.25rem;" loading="lazy"/>
+            <button class="option-button" style="border: none; background: none; cursor: pointer; padding: 0;">
+              <img src="img/github.svg" style="width: 2.25rem;" loading="lazy" alt="Inventory Icon"/>
+            </button>
             <h3 style="font-weight: 500; font-size: .875rem; line-height: 1.5rem; margin-top: 1.5rem;">
               Contacts
             </h3>
