@@ -32,27 +32,45 @@
 
 <body>
   <header>
-    <div style="padding: 1.5rem;align-items: center;justify-content: space-between;">
-      <div style="justify-content: space-between; display: flex;">
-        <div style="column-gap: 3rem; align-items: center; display: flex;">
-            <img src="img/logo.svg" alt="Company Logo" width="109rem" height="40rem"/>
-          <!-- for the options like feature , testimonial, pricing  ,
-             space-between doesn't create space but put then in equidistant to eachother-->
-          <div style="display: flex; padding-left: 1rem;justify-content: space-between;">
-            <div style="margin-right: 1rem;">Features</div>
-            <div style="margin-right: 1rem;">Testimonial</div>
-            <div style="margin-right: 1rem;">Pricing</div>
-          </div>
+    <div class="container" style="padding: 1.5rem; align-items: center; justify-content: space-between; display: flex;">
+      <div style="column-gap: 3rem; align-items: center; display: flex;">
+        <!-- Company Logo -->
+        <img src="img/logo.svg" alt="Company Logo" width="109rem" height="40rem" />
+    
+        <!-- Desktop Navigation Menu (Visible on larger screens) -->
+        <div class="nav-options">
+          <div style="margin-right: 1rem;">Features</div>
+          <div style="margin-right: 1rem;">Testimonial</div>
+          <div style="margin-right: 1rem;">Pricing</div>
         </div>
-        <!-- for the button GetStarted and signin -->
-        <div style="column-gap: 2rem;display: flex; align-items: center;">
-          <div style="margin-left: 1rem;">Sign in</div>
-          <div class="btn btn-sm rounded-pill border "
-          style="background-color: #2563EB;color: white; padding: 0.5rem 1rem; ">Get Started</div>
+      </div>
+    
+      <!-- Desktop Buttons (Visible on larger screens) -->
+      <div class="nav-actions">
+        <div style="margin: 1rem;">Sign in</div>
+        <div class="btn btn-sm rounded-pill border" style="background-color: #2563EB; color: white; padding: 0.5rem 1rem;">
+          Get Started
         </div>
+      </div>
+    
+      <!-- Hamburger Menu Icon (Visible on smaller screens) -->
+      <div class="hamburger-menu" style="font-size: 2rem; cursor: pointer;">
+        ☰
+      </div>
+    </div>
+    
+    <!-- Mobile Menu (Hidden by default, visible on smaller screens) -->
+    <div class="mobile-menu" style="display: none; flex-direction: column; padding-top: 1rem;">
+      <div style="margin-bottom: 1rem;">Features</div>
+      <div style="margin-bottom: 1rem;">Testimonial</div>
+      <div style="margin-bottom: 1rem;">Pricing</div>
+      <div style="margin-bottom: 1rem;">Sign in</div>
+      <div class="btn btn-sm rounded-pill border" style="background-color: #2563EB; color: white; padding: 0.5rem 1rem;">
+        Get Started
       </div>
     </div>
   </header>
+  
   <main class="">
     <!-- Main content-->
 

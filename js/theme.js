@@ -922,6 +922,21 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+//this is the navbar 
+
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburgerMenu = document.querySelector('.hamburger-menu');
+  const mobileMenu = document.querySelector('.mobile-menu');
+
+  // Add click event listener to toggle the mobile menu
+  hamburgerMenu.addEventListener('click', function() {
+    mobileMenu.classList.toggle('show'); // Toggle the "show" class to display the menu
+    
+  });
+});
+
+
+
 
 
 })();

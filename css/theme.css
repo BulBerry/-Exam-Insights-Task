@@ -17611,7 +17611,7 @@ display: flex;
 justify-content: flex-start; /* Align content to the left */
 align-items: center;
 background-color: #f5f7f9;
-padding: 2rem;
+padding: 20px;
 border-radius: 15px;
 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
 overflow-x: hidden; /* Allow horizontal scrolling */
@@ -17640,7 +17640,7 @@ background-color: #fff; /* Optional: white background for each image wrapper */
 padding: 10px;
 border-radius: 15px;
 overflow: hidden; 
-margin: 2rem;
+margin: 1.5rem;
 }
 .image-slider {
   display: flex;
@@ -17679,3 +17679,49 @@ display: none;
   filter: grayscale(0%);
   transform: scale(1.1);
 }
+
+/* Default for larger screens (above 744px) */
+.hamburger-menu {
+  display: none; /* Hide hamburger menu on large screens */
+}
+
+.mobile-menu {
+  display: none; /* Keep mobile menu hidden by default */
+}
+
+.nav-options,
+.nav-actions {
+  display: flex; /* Show desktop navigation by default */
+}
+
+/* For smaller screens (below 744px) */
+@media (max-width: 744px) {
+  .nav-options,
+  .nav-actions {
+    display: none; /* Hide desktop navigation menu on small screens */
+  }
+
+  .hamburger-menu {
+    display: block; /* Show the hamburger menu on small screens */
+  }
+
+  .mobile-menu {
+    display: none; /* Keep mobile menu hidden by default */
+    flex-direction: column;
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+  }
+}
+
+/* Mobile menu transitions */
+.mobile-menu.show {
+  display: flex; /* Show mobile menu when .show class is added */
+  opacity: 1;
+  transform: translateY(0); /* Slide in the mobile menu */
+}
+
+.mobile-menu {
+  opacity: 0;
+  transform: translateY(-20px); /* Initially slide up a bit */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+}
+
